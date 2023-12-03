@@ -29,7 +29,7 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
-    isTutor: {
+    isSeller: {
       type: Boolean,
       default: false,
     },
