@@ -48,10 +48,6 @@ const GigSchema = new Schema(
       type: String,
       required: true,
     },
-    schedule: {
-      type: Number,
-      required: true,
-    },
     availability: {
       type: Number,
       required: true,
