@@ -26,7 +26,7 @@ const connect = async () => {
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://eduscape.tech',
     credentials: true,
     optionSuccessStatus: 200,
   })
