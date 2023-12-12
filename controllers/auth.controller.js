@@ -40,7 +40,10 @@ export const login = async (req, res, next) => {
     console.log(token);
     const { password, ...info } = user._doc;
     res
-      .cookie('accessToken', token, { secure: true })
+      .cookie('accessToken', token, {
+        sameSite: 'None',
+        secure: true,
+      })
       .status(200)
       .send(info);
   } catch (err) {
