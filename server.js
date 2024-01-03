@@ -27,7 +27,7 @@ const connect = async () => {
 app.use(
   cors({
     origin: '*',
-    credentials: true,
+    credentials: false,
     optionSuccessStatus: 200,
   })
 );
