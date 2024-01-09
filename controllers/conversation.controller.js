@@ -16,6 +16,7 @@ export const createConversation = async (req, res, next) => {
     readBySeller: req.isSeller,
     readByBuyer: !req.isSeller,
     sellerName: user.username,
+    sellerImg: user.img,
   });
 
   try {
