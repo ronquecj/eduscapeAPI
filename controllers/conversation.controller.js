@@ -5,7 +5,8 @@ import { getUser } from '../controllers/user.controller.js';
 export const createConversation = async (req, res, next) => {
   console.log(req.userId);
   console.log(req.body.to);
-  const user = getUser(req.body.to);
+  const user = getU(req.body.to);
+  console.log(user);
   const newConversation = new Conversation({
     id: req.isSeller
       ? req.userId + req.body.to
