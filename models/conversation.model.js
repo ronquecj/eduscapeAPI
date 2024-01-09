@@ -33,6 +33,10 @@ const ConversationSchema = new Schema(
       type: String,
       required: true,
     },
+    sellerImg: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
