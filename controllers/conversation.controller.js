@@ -5,7 +5,7 @@ import { getU } from '../controllers/user.controller.js';
 export const createConversation = async (req, res, next) => {
   console.log(req.userId);
   console.log(req.body.to);
-  const user = getU(req.body.to);
+  const user = await getU(req.body.to);
   console.log(user);
   const newConversation = new Conversation({
     id: req.isSeller
