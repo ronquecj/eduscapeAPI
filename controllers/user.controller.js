@@ -19,8 +19,8 @@ export const getUser = async (req, res, next) => {
   res.status(200).send(user);
 };
 
-export const getU = async (req, res, next) => {
-  const user = await User.findById(req.params.id);
+export const getU = async (id) => {
+  const user = await User.findById(id);
 
   return user;
 };
