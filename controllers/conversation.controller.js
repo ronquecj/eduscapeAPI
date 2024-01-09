@@ -15,7 +15,7 @@ export const createConversation = async (req, res, next) => {
     buyerId: req.isSeller ? req.body.to : req.userId,
     readBySeller: req.isSeller,
     readByBuyer: !req.isSeller,
-    sellerName: user,
+    sellerName: user.username,
   });
 
   try {
