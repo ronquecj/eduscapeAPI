@@ -26,7 +26,7 @@ const connect = async () => {
 
 app.use(
   cors({
-    origin: true,
+    origin: [true, 'https://eduscape.netlify.app/'],
     credentials: true,
     optionSuccessStatus: 200,
   })
