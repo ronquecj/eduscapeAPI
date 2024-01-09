@@ -29,6 +29,10 @@ const ConversationSchema = new Schema(
       type: String,
       required: false,
     },
+    sellerName: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

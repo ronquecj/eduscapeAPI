@@ -1,7 +1,11 @@
 import createError from '../utils/createError.js';
 import Conversation from '../models/conversation.model.js';
+import userController from '../controllers/user.controller.js';
 
 export const createConversation = async (req, res, next) => {
+  const user = await userController.getUser(
+    req.isSeller ? req.userId : req.body.to
+  );
   const newConversation = new Conversation({
     id: req.isSeller
       ? req.userId + req.body.to
@@ -10,6 +14,7 @@ export const createConversation = async (req, res, next) => {
     buyerId: req.isSeller ? req.body.to : req.userId,
     readBySeller: req.isSeller,
     readByBuyer: !req.isSeller,
+    sellerName: user,
   });
 
   try {
