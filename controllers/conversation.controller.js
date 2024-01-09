@@ -1,6 +1,6 @@
 import createError from '../utils/createError.js';
 import Conversation from '../models/conversation.model.js';
-import { getUser } from '../controllers/user.controller.js';
+import { getU } from '../controllers/user.controller.js';
 
 export const createConversation = async (req, res, next) => {
   console.log(req.userId);
