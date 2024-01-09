@@ -3,6 +3,8 @@ import Conversation from '../models/conversation.model.js';
 import { getUser } from '../controllers/user.controller.js';
 
 export const createConversation = async (req, res, next) => {
+  console.log(req.userId);
+  console.log(req.body.to);
   const user = await getUser(req.isSeller ? req.userId : req.body.to);
   const newConversation = new Conversation({
     id: req.isSeller
