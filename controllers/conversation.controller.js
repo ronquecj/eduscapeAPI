@@ -7,6 +7,7 @@ export const createConversation = async (req, res, next) => {
   const buyer = await getU(req.userId);
   console.log(seller);
   console.log(buyer);
+  console.log(`BUYER NAME: ${buyer.username}`);
   const newConversation = new Conversation({
     id: req.isSeller
       ? req.userId + req.body.to
