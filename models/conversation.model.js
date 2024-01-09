@@ -31,9 +31,17 @@ const ConversationSchema = new Schema(
     },
     sellerName: {
       type: String,
-      required: true, 
+      required: true,
     },
     sellerImg: {
+      type: String,
+      required: true,
+    },
+    buyerName: {
+      type: String,
+      required: true,
+    },
+    buyerImg: {
       type: String,
       required: true,
     },
