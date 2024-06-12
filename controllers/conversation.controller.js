@@ -5,9 +5,7 @@ import { getU } from '../controllers/user.controller.js';
 export const createConversation = async (req, res, next) => {
   const seller = await getU(req.body.to);
   const buyer = await getU(req.userId);
-  console.log(seller);
-  console.log(buyer);
-  console.log(`BUYER NAME: ${buyer.username}`);
+
   const newConversation = new Conversation({
     id: req.isSeller
       ? req.userId + req.body.to
@@ -16,9 +14,9 @@ export const createConversation = async (req, res, next) => {
     buyerId: req.isSeller ? req.body.to : req.userId,
     readBySeller: req.isSeller,
     readByBuyer: !req.isSeller,
-    sellerName: seller.username,
+    sellerName: `${seller.firstName} ${seller.lastName}`,
     sellerImg: seller.img,
-    buyerName: buyer.username,
+    buyerName: `${buyer.firstName} ${buyer.lastName}`,
     buyerImg: buyer.img,
   });
 
