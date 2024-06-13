@@ -21,6 +21,22 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    birthdate: {
+      type: String,
+      required: true,
+    },
+    facebook: {
+      type: String,
+      required: true,
+    },
+    gmail: {
+      type: String,
+      required: true,
+    },
+    linkedin: {
+      type: String,
+      required: true,
+    },
     province: {
       type: String,
       required: true,
