@@ -52,6 +52,10 @@ const GigSchema = new Schema(
       type: Number,
       required: true,
     },
+    daysToComplete: {
+      type: Number,
+      required: true,
+    },
     features: {
       type: [String],
       required: false,
