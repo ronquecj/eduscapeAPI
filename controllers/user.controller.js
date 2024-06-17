@@ -39,3 +39,19 @@ export const getForApprovalTutors = async (req, res, next) => {
     res.status(404).send({ message: 'error', err: err.message });
   }
 };
+
+export const approveTutor = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const filter = { _id: id };
+    const update = { isApproved: true };
+
+    const approve = await User.findOneAndUpdate(filter, update, {
+      new: true,
+    });
+
+    res.status(200).json(approve);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
