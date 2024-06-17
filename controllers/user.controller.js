@@ -19,6 +19,12 @@ export const getUser = async (req, res, next) => {
   res.status(200).send(user);
 };
 
+export const getU = async (id) => {
+  const user = await User.findById(id);
+
+  return user;
+};
+
 export const getForApprovalTutors = async (req, res, next) => {
   try {
     const tutors = await User.find({
