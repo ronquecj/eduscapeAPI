@@ -27,10 +27,7 @@ export const getU = async (id) => {
 
 export const getForApprovalTutors = async (req, res, next) => {
   try {
-    const tutors = await User.find({
-      isSeller: true,
-      isApproved: false,
-    });
+    const tutors = await User.find();
     res.status(200).send(tutors);
   } catch (err) {
     res.status(404).send({ message: 'error', err: err.message });
