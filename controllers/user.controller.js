@@ -24,3 +24,11 @@ export const getU = async (id) => {
 
   return user;
 };
+
+export const getForApprovalTutors = async (req, res, next) => {
+  const tutors = await User.find({
+    isSeller: true,
+    isApproved: false,
+  });
+  res.status(200).send(tutors);
+};
