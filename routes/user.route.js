@@ -8,8 +8,8 @@ import { verifyToken } from '../middleware/jwt.js';
 
 const router = express.Router();
 
+router.get('/accounts/:string', getForApprovalTutors);
 router.delete('/:id', verifyToken, deleteUser);
 router.get('/:id', verifyToken, getUser);
-router.get('/:string', verifyToken, getForApprovalTutors);
 
 export default router;

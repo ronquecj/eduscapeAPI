@@ -26,8 +26,8 @@ export const getU = async (id) => {
 };
 
 export const getForApprovalTutors = async (req, res, next) => {
-  if (req.params.string != 'accounts')
-    res.status(404).send({ message: 'error', err: err.message });
+  // if (req.params.string != 'accounts')
+  //   res.status(404).send({ message: 'error', err: err.message });
 
   try {
     const tutors = await User.find({
