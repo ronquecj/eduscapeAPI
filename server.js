@@ -24,13 +24,25 @@ const connect = async () => {
   }
 };
 
-app.use(
-  cors({
-    origin: true,
-    credentials: true,
-    optionSuccessStatus: 200,
-  })
-);
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://eduscape.site',
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Check if the origin is in the allowed origins array or if no origin (like for mobile apps)
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
