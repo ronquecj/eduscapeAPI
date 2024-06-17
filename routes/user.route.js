@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.delete('/:id', verifyToken, deleteUser);
 router.get('/:id', verifyToken, getUser);
-router.get('/forapprovalaccounts', verifyToken, getForApprovalTutors);
+router.get('/forapprovalaccounts', getForApprovalTutors);
 
 export default router;
