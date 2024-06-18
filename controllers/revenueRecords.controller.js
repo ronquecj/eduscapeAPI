@@ -30,3 +30,23 @@ export const getRecords = async (req, res, next) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const approvePayment = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const filter = { _id: id };
+    const update = { isApproved: true };
+
+    const approve = await RevenueRecords.findOneAndUpdate(
+      filter,
+      update,
+      {
+        new: true,
+      }
+    );
+
+    res.status(200).json(approve);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
