@@ -12,6 +12,10 @@ const RevenueRecordsSchema = new Schema(
       type: Object,
       required: true,
     },
+    sellerData: {
+      type: Object,
+      required: true,
+    },
     referenceNumber: {
       type: String,
       required: true,

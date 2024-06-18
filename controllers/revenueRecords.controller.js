@@ -31,6 +31,15 @@ export const getRecords = async (req, res, next) => {
   }
 };
 
+export const getAllRecords = async (req, res, next) => {
+  try {
+    const gigs = await RevenueRecords.find();
+    res.status(200).send(gigs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 export const approvePayment = async (req, res, next) => {
   try {
     const { id } = req.params;
