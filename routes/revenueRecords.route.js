@@ -11,6 +11,6 @@ const router = express.Router();
 router.post('/record/:string', createRecord);
 router.get('/record/:id', getRecord);
 router.get('/records/:id', getRecords);
-router.poost('/approve/:id', approvePayment);
+router.post('/approve/:id', approvePayment);
 
 export default router;
