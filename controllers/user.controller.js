@@ -55,3 +55,20 @@ export const approveTutor = async (req, res, next) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const uploadGcashQR = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { imgURL } = req.body;
+    const filter = { _id: id };
+    const update = { gcashQR: imgURL };
+
+    const approve = await User.findOneAndUpdate(filter, update, {
+      new: true,
+    });
+
+    res.status(200).json(approve);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
