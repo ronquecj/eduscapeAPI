@@ -27,15 +27,15 @@ const userSchema = new Schema(
     },
     facebook: {
       type: String,
-      required: true,
+      required: false,
     },
     gmail: {
       type: String,
-      required: true,
+      required: false,
     },
     linkedin: {
       type: String,
-      required: true,
+      required: false,
     },
     province: {
       type: String,
