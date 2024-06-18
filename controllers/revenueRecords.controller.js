@@ -12,3 +12,12 @@ export const createRecord = async (req, res, next) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const getRecord = async (req, res, next) => {
+  try {
+    const gig = await RevenueRecords.findById(req.params.id);
+    res.status(200).send(gig);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
