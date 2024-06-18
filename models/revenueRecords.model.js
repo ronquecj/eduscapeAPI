@@ -4,12 +4,12 @@ const { Schema } = mongoose;
 
 const RevenueRecordsSchema = new Schema(
   {
-    courseName: {
-      type: String,
+    gigData: {
+      type: Object,
       required: true,
     },
-    buyerName: {
-      type: String,
+    buyerData: {
+      type: Object,
       required: true,
     },
     referenceNumber: {
