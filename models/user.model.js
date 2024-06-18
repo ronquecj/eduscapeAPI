@@ -73,6 +73,10 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    gcashQR: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,
