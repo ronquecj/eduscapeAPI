@@ -24,7 +24,7 @@ export const getRecord = async (req, res, next) => {
 
 export const getRecords = async (req, res, next) => {
   try {
-    const gigs = await RevenueRecords.find();
+    const gigs = await RevenueRecords.find({ isApproved: false });
     res.status(200).send(gigs);
   } catch (err) {
     res.status(500).json({ error: err.message });
