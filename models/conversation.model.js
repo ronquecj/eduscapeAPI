@@ -45,6 +45,11 @@ const ConversationSchema = new Schema(
       type: String,
       required: true,
     },
+    gmeetLink: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
   {
     timestamps: true,

@@ -74,3 +74,20 @@ export const getConversations = async (req, res, next) => {
     next(err);
   }
 };
+
+export const addGmeetLink = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { gmeetLink } = req.body;
+    const filter = { _id: id };
+    const update = { gmeetLink };
+
+    const addLink = await Conversation.findOneAndUpdate(filter, update, {
+      new: true,
+    });
+
+    res.status(200).json(addLink);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

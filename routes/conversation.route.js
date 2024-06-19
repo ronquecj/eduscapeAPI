@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  addGmeetLink,
   createConversation,
   getConversations,
   getSingleConversation,
@@ -13,5 +14,6 @@ router.get('/', verifyToken, getConversations);
 router.post('/', verifyToken, createConversation);
 router.get('/single/:id', verifyToken, getSingleConversation);
 router.put('/:id', verifyToken, updateConversation);
+router.post('/link/:id', addGmeetLink);
 
 export default router;
