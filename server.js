@@ -26,8 +26,8 @@ const connect = async () => {
 };
 
 const allowedOrigins = [
-  'http://localhost:5173',
-  'https://eduscape.site',
+  // 'http://localhost:5173',
+  'https://www.eduscape.site',
 ];
 
 const corsOptions = {
